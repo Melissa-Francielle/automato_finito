@@ -1,2 +1,2 @@
-# automato_finito_deterministico
+# automato_finito
 Implementação de um autômato finito na linguagem Python. 

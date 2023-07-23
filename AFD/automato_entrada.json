@@ -1,11 +1,10 @@
 {
     "initial": [0],
     "final": [11],
-    "states": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     "transitions": [
       { "from": 0, "read": "a", "to": 1 },
+      { "from": 0, "read": "b", "to": 0},
       { "from": 0, "read": "c", "to": 2 },
-      { "from": 0, "read": "b", "to": 0 },
       { "from": 1, "read": "a", "to": 1 },
       { "from": 1, "read": "b", "to": 3 },
       { "from": 1, "read": "c", "to": 2 },

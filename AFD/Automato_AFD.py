@@ -14,23 +14,25 @@ class AutomatoDFA:
     def operation (self, str_in_input): #uma função para executar o automato. a partir de uma entrada 
         current = self._initial_states #estado atual que seria o inicial, para começar o automato 
         for word in str_in_input: #passa interando em entrada que é (Str_entrada)
-            next = self._get_next (current, word) #a partir de uma variavel proximo_estado é pego o método proximo_estado privado e coloca como atributos a palavra e o estado atual            
-            if next in self._final_states: #caso o proximo estado esteja vázio após percorrer a palavra e não levar ao estado final desejado 
-                self.result.append('Aceita')
-            else:
-                self.result.append('Rejeita')    
+            current = self._get_next (current, word) #a partir de uma variavel proximo_estado é pego o método proximo_estado privado e coloca como atributos a palavra e o estado atual            
+            if current is None: # Adiciona esta condição para interromper a execução se não houver transição para a palavra lida
+                break
+        if current in self._final_states: #caso o proximo estado esteja vázio após percorrer a palavra e não levar ao estado final desejado 
+            return 'Accepted'
+        else:
+            return 'Rejected'   
     
     def _get_next (self, current, word): #o método chamado logo acima, que pega o estado e tem os mesmos parametros usado acima
         for transition in self._transitions: #intera transições em self.transições
-            if transition["from"] == current and (transition["read"] == word): #caso a transição from, no caso o arquivo dentro do json
+            if transition["from"] == current and transition["read"] == word: #caso a transição from, no caso o arquivo dentro do json
                 #for == ao estado atual que no método acima foi colocado como proximo, e for lido uma palavra ou seja lido um vazio
-                transition["to", self.operation(word, current)] #então retonar para qual proximo estado vai
+                return transition["to"] #então retonar para qual proximo estado vai
         return None
 
     def manipulating (self, string):
-        self.operation(string)
-        if('Accepted' in self.result):
-            self.result = ()
+        self.result = [] # Limpa os resultados anteriores antes de executar o autômato
+        result = self.operation(string)
+        if 'Accepted' in result:
             return 1
         else:
             return 0
@@ -59,11 +61,13 @@ def main (file_aut_path, file_teste_path, file_out_path):
         
         for testing in case_test:
             str_in_input, expected_result = testing
-            start_time = time.time()
+            start_time = time.perf_counter()
             result = automata.manipulating(str_in_input)
-            end_time = time.time()
-            execution_time = round((end_time - start_time), 10)
-            writing.writerow([str_in_input, expected_result, int(result), execution_time])
+            end_time = time.perf_counter()
+
+            execution_time = "{:.5f}".format(end_time - start_time)  # Formatação com cinco casas decimais
+            writing.writerow([str_in_input, expected_result, result, execution_time])
+            csv_file.flush()
 
 if __name__ == "__main__":
     if len(sys.argv) !=4:

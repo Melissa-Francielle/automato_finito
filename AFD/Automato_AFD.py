@@ -30,7 +30,7 @@ class AutomatoDFA:
     def manipulating (self, string):
         self.operation(string)
         if('Accepted' in self.result):
-            self.resultado = ()
+            self.result = ()
             return 1
         else:
             return 0

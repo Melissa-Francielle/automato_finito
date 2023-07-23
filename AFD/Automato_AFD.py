@@ -20,11 +20,11 @@ class AutomatoDFA:
             else:
                 self.result.append('Rejeita')    
     
-    def _get_next (self, estado_atual, palavra): #o método chamado logo acima, que pega o estado e tem os mesmos parametros usado acima
+    def _get_next (self, current, word): #o método chamado logo acima, que pega o estado e tem os mesmos parametros usado acima
         for transition in self._transitions: #intera transições em self.transições
-            if transition["from"] == estado_atual and (transition["read"] == palavra): #caso a transição from, no caso o arquivo dentro do json
+            if transition["from"] == current and (transition["read"] == word): #caso a transição from, no caso o arquivo dentro do json
                 #for == ao estado atual que no método acima foi colocado como proximo, e for lido uma palavra ou seja lido um vazio
-                self.operation(palavra, estado_atual) #então retonar para qual proximo estado vai
+                self.operation(word, current) #então retonar para qual proximo estado vai
         return None
 
     def manipulating (self, string):

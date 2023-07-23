@@ -63,7 +63,7 @@ def main (file_aut_path, file_teste_path, file_out_path):
             result = automata.manipulating(str_in_input)
             end_time = time.time()
             execution_time = round((end_time - start_time), 10)
-            writing.writerow([str_in_input, expected_result, int(result), float(execution_time)])
+            writing.writerow([str_in_input, expected_result, int(result), execution_time])
 
 if __name__ == "__main__":
     if len(sys.argv) !=4:

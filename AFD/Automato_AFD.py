@@ -24,7 +24,7 @@ class AutomatoDFA:
         for transition in self._transitions: #intera transições em self.transições
             if transition["from"] == current and (transition["read"] == word): #caso a transição from, no caso o arquivo dentro do json
                 #for == ao estado atual que no método acima foi colocado como proximo, e for lido uma palavra ou seja lido um vazio
-                self.operation(word, current) #então retonar para qual proximo estado vai
+                transition["to", self.operation(word, current)] #então retonar para qual proximo estado vai
         return None
 
     def manipulating (self, string):
@@ -70,5 +70,3 @@ if __name__ == "__main__":
         print("Ordem para acessar o arquivo: python arquivo tipo ->(.py) arquivo tipo ->(.aut) arquivo do tipo-> (.csv) nome do arquivo de saida tipo -> (.out)")
     else:
         main(sys.argv[1], sys.argv[2], sys.argv[3])
-        
-                    

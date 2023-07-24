@@ -23,7 +23,8 @@ class AutomatoDFA:
             return 'Rejected'   
     
     def _get_next (self, current, word): #o método chamado logo acima, que pega o estado e tem os mesmos parametros usado acima
-        for transition in self._transitions: #intera transições em self.transições
+        current = current[0] if isinstance(current, list) else current  # Convertendo o estado atual para um número inteiro
+        for transition in self._transitions:
             if transition["from"] == current and transition["read"] == word: #caso a transição from, no caso o arquivo dentro do json
                 #for == ao estado atual que no método acima foi colocado como proximo, e for lido uma palavra ou seja lido um vazio
                 return transition["to"] #então retonar para qual proximo estado vai
@@ -31,11 +32,13 @@ class AutomatoDFA:
 
     def manipulating (self, string):
         self.result = [] # Limpa os resultados anteriores antes de executar o autômato
-        result = self.operation(string)
+        self.result = self.operation(string)
+        result = self.result
         if 'Accepted' in result:
             return 1
-        else:
+        elif 'Rejected' in result:  # Corrigido para verificar 'Rejected'
             return 0
+
             
 def automata_file(file_path): #uma função fora da class para ler o arquivo json
     with open(file_path) as file:

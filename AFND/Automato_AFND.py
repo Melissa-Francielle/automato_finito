@@ -27,16 +27,11 @@ class Automato_epsilon:
     def _get_next_states(self, current_states, word):
         next_states = set()
         for transition in self._transitions:
-            if transition["from"] == current_states and transition["read"] == word:
+            if transition["from"] == current_states and transition["read"] == word or transition["read"] == "&"::
                 if isinstance(transition["to"], int):
                     next_states.add(transition["to"])
                 else:
-                    next_states.update(transition["to"])
-            if transition["from"] == current_states and transition["read"] == "&":
-                if isinstance(transition["to"], int):
-                    next_states.add(transition["to"])
-                else:
-                    next_states.update(transition["to"])        
+                    next_states.update(transition["to"])       
         return list(next_states)
         
     def epsilon_closure(self, states):

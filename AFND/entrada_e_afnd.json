@@ -1,0 +1,17 @@
+{
+    "initial": [0],
+      "final": [7],
+      "transitions": [
+        { "from": 0, "read": "a", "to": 0 },
+        { "from": 0, "read": "b", "to": 0},
+        { "from": 0, "read": "c", "to": 0 },
+        { "from": 0, "read": "&", "to": [1,2,4]},
+        { "from": 1, "read": "a", "to": 7},
+        { "from": 2, "read": "b", "to": 3},
+        { "from": 3, "read": "b", "to": 7},
+        { "from": 4, "read": "c", "to": 5},
+        { "from": 5, "read": "c", "to": 6},
+        { "from": 6, "read": "c", "to": 7}
+    ]
+
+}

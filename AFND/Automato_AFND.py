@@ -3,7 +3,7 @@ import csv
 import time
 import sys
 
-class Automato_epsilon:
+class AFND:
     def __init__(self, file_aut):
         initial_states = file_aut["initial"]
         if isinstance(initial_states, int):  # Verifica se é um único estado inicial (int) e converte em uma lista
@@ -13,51 +13,38 @@ class Automato_epsilon:
         self._transitions = file_aut["transitions"]
         self.result = []
 
-    #def operation(self, str_in_input):
-     #   current_states = self._initial_states
-      #  for word in str_in_input:
-       #     current_states = self._get_next_states(current_states, word)
-        #    if not current_states: # Adiciona esta condição para interromper a execução se não houver transição para a palavra lida
-         #       break
-        #if any(state in self._final_states for state in current_states):
-        #    return 'A'
-        #else:
-         #   return 'R'
+    def operation(self, str_in_input):
+        current_states = self._initial_states
+        for word in str_in_input:
+            current_states = self._get_next_states(current_states, word)
+            if not current_states: # Adiciona esta condição para interromper a execução se não houver transição para a palavra lida
+                break
+        if any(state in self._final_states for state in current_states):
+            return 'A'
+        else:
+          return 'R'
 
     def _get_next_states(self, current_states, word):
-        next_states = set()
+        next_states = []
         for transition in self._transitions:
-            if transition["from"] == current_states and transition["read"] == word or transition["read"] == "&":
+            if transition["from"] == current_states and transition["read"] == word:
                 if isinstance(transition["to"], int):
                     next_states.add(transition["to"])
                 else:
-                    next_states.update(transition["to"])       
+                    next_states.update(transition["to"])        
         return list(next_states)
-        
-    def epsilon_closure(self, states):
-        closure = set(states)
-        stack = list(states)
-        while stack:
-            states = stack.pop()
-            epsilon_transitions = self._get_next_states({states}, {"&"})
-            for next_state in epsilon_transitions:
-                if next_state not in closure:
-                    closure.add(next_state)
-                    stack.extend([next_state])
-        return list(closure)
 
     def manipulating(self, string):
         self.result = [] # Limpa os resultados anteriores antes de executar o autômato
-        current_states = self.epsilon_closure(set(self._initial_states))
+        self.current_states = []
         for word in string:
-            next_states = set(current_states)
-            for state in current_states:
-                state_transitions = self._get_next_states(set([state]), word)
-                next_states |= set(state_transitions) #O |= atribuirá o valor após executar um OR entre duas variáveis, mas bit a bit
-            current_states = self.epsilon_closure(next_states)  # Usamos set() para tratar os estados como um conjunto
-            if not current_states:
+            next_states = []
+            for state in self.current_states:
+                state_transitions = self._get_next_states([state], word) #O |= atribuirá o valor após executar um OR entre duas variáveis, mas bit a bit
+                next_states.update(state_transitions)
+            if not self.current_states:
                 break
-        if any(state in self._final_states for state in current_states):
+        if any(state in self._final_states for state in self.current_states):
             return '1'
         else:
             return '0'
@@ -80,7 +67,7 @@ def cases(file_path):
     return test
 
 def main(file_aut_path, file_teste_path, file_out_path):
-    automata = Automato_epsilon(automata_file(file_aut_path))
+    automata = AFND(automata_file(file_aut_path))
     case_test = cases(file_teste_path)
 
     with open(file_out_path, 'w', newline='') as csv_file:

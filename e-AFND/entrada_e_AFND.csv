@@ -1,6 +1,5 @@
-
-&bcbabcc;1
-&abbcacbabb;1
-aa&cbccbbaccbaa;0
-b&bbbbcabbbaa;0
-
+Palavra de entrada; Resultado esperado
+aba;0
+cac;0
+abacac;1
+cacaba;1

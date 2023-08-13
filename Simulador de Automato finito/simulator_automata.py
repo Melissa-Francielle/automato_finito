@@ -5,15 +5,20 @@ import sys
 
 class Simulador:
     def __init__(self):
-        self.estados = []
-        self._estado_inicial = ''
-        self._estado_final = []
-        self.transicao = {}
-        self._lista_resultados= []
+         self._estados = []
+        self._estado_inicial = ' '
+        self._estados_finais = []
+        self._delta = {}
+        self._estados_atuais = []
+        self._resultados = []
+        if " " in self.delta[self._estado_inicial -1]:
+            self.transicoes_vazias(self._estado_inicial)
 
-    def Gerando_da_entrada(self, estados, estado_inicial, estado_final, delta, current, word):
-        self._estado_inicial = estado_inicial
-        #Ainda tentando como fazer essa parte
+    def Gerando_da_entrada(self):
+        self._estados_atuais = []
+        self._estados_atuais.append(self._estado_inicial)
+        if " " in self.delta[self._estado_inicial - 1]:
+            self.trasicoes_vazias(self._estado_inicial)
 
     def delta (self, q, states, word):
         for state in self.transicao[q][states]:

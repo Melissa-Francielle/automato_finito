@@ -1,15 +1,19 @@
-# automato_finito
-Implementação de um autômato finito na linguagem Python. 
+# Simulador de automato_finito
+Implementação de um simulador de automato finito feito em linguagem Python.
+Os tipos de automatos simulados:
+- AFD
+- AFND
+- AFND-e
 
-#Automato AFD
-O funcionamento de um Automato Deterministico 
-A partir de um arquivo json que recebe:
-- Estado inicial
-- Estado Final
-- Transições
-  
-  ![image](https://github.com/Melissa-Francielle/automato_finito/assets/129883268/5d07a531-978a-4288-8f06-fbc057cc5ff9)
+## Funcionamento
+Para seu funcionamento o simulador receber um arquivo.json que irá conter as transições, estados finais e estado inicial, também será recebido uma entrada.csv e o programa de deve devolver uma saída podendo ser um arquivo.txt. 
 
-E a partir de outro arquivo do formato csv, o automato lê as palavras de entrada e traz os resultados obtidos a partir da analise 
-
-![image](https://github.com/Melissa-Francielle/automato_finito/assets/129883268/5510acd5-45ee-4254-966b-76a3f6ee1de6)
+## Arquivo.json 
+AFD 
+"initial": 0,
+"final": [11],
+"transitions": [  
+{ "from": 0, "read": "a", "to": 1 },  
+{ "from": 0, "read": "c", "to": 2 },  
+[...]  
+O restante do arquivo.json do AFD pode ser encontrado nesse link [JSON]()

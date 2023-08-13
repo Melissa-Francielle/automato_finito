@@ -20,8 +20,8 @@ cac;0
 abacac;1  
 cacaba;1  
 
-"initial": 0,
-"final": [11],
+"initial": 0,  
+"final": [11],  
 "transitions": [  
 { "from": 0, "read": "a", "to": 1 },  
 { "from": 0, "read": "c", "to": 2 },  

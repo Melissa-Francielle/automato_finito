@@ -26,5 +26,5 @@ cacaba;1
 { "from": 0, "read": "a", "to": 1 },  
 { "from": 0, "read": "c", "to": 2 },  
 [...]  
-O restante do arquivo.json do AFD pode ser encontrado nesse link [JSON](https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/automato_AFD.json)
+O restante do arquivo.json do AFD pode ser encontrado aqui -> [JSON_AFD](https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/automato_AFD.json)
 

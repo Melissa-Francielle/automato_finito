@@ -7,7 +7,7 @@ Os tipos de automatos simulados:
 
 ## Funcionamento
 Para seu funcionamento o simulador receber um arquivo.json que irá conter as transições, estados finais e estado inicial, também será recebido uma entrada.csv e o programa de deve devolver uma saída podendo ser um arquivo.txt. 
-Na entrada CSV apresenta a seguinte ordem:
+Na saída e na entrada.csv apresentam a seguinte ordem:
 ### Palavra de entrada, Resultado esperado, Resultado obtido, Tempo
 Sendo 0 = REIJEITA
 e 1 = ACEITA

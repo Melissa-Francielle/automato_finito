@@ -10,7 +10,7 @@ Para seu funcionamento o simulador receber um arquivo.json que irá conter as tr
 Na entrada CSV apresenta a seguinte ordem:
 ### Palavra de entrada, Resultado esperado, Resultado obtido, Tempo
 Sendo 0 = REIJEITA
-E 1 = ACEITA
+e 1 = ACEITA
 
 ## Arquivo.json 
 # AFD   

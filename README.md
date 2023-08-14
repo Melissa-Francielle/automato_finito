@@ -34,5 +34,5 @@ O restante do arquivo.json do AFD pode ser encontrado aqui -> [JSON_AFD](https:/
 Arquivo.json do AFND-e -> [JSON AFND-e](https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/Automato_AFND_e.json) 
 
 # AFND 
-Arquivo.json do AFND -> [JSON AFND] (https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/Automato_AFND.json)
+Arquivo.json do AFND -> [JSON AFND](https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/Automato_AFND.json)
 

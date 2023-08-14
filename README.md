@@ -29,8 +29,10 @@ cacaba;1
 O automato deve aceitar palavras com aba e cac 
 O restante do arquivo.json do AFD pode ser encontrado aqui -> [JSON_AFD](https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/automato_AFD.json)
 
+# AFND-e 
+
+Arquivo.json do AFND-e -> [JSON AFND-e](https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/Automato_AFND_e.json) 
+
 # AFND 
-
-Arquivo.json do AFND -> [JSON AFND](https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/Automato_AFND_e.json) 
-
+Arquivo.json do AFND -> [JSON AFND] (https://github.com/Melissa-Francielle/automato_finito/blob/main/Simulador%20de%20Automato%20finito/Automato_AFND.json)
 

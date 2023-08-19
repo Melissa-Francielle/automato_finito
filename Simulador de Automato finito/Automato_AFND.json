@@ -4,7 +4,8 @@
       "transitions": [
         { "from": 0, "read": "a", "to": 0 },
         { "from": 0, "read": "b", "to": 0 },
-        { "from": 0, "read": "c", "to": [0,1]},
+        { "from": 0, "read": "c", "to": 0},
+        { "from": 0, "read": "c", "to": 1},
         { "from": 1, "read": "a", "to": 2 },
         { "from": 2, "read": "b", "to": 3 }
     ]

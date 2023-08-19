@@ -1,0 +1,5 @@
+Palavra de entrada;Resultado esperado
+aababababbbcacba;1
+abacac;1
+aababababbbababa;0
+acacbababbbababa;1

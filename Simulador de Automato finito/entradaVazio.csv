@@ -1,0 +1,8 @@
+Palavra de entrada;Resultado esperado
+a;0
+aa;1
+bbbb;1
+abbc;0
+aabbbbccc;1
+bb;0
+ccc;0

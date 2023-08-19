@@ -1,0 +1,6 @@
+Palavra de entrada;Resultado esperado
+cab;1
+aacab;1
+abaccab;1
+bbbbbaaa;0
+cabbca;0
